@@ -1,0 +1,26 @@
+"""
+## Approach Explanation:
+1. **User Query Processing:** The Flask API receives user queries through the `/latest-phones` endpoint.
+2. **AI Integration:** The `process_query` function sends the query to Google Gemini API, which determines if the user is asking about the latest phone models.
+3. **Fetching Phone Data:** If the AI confirms the query intent, `fetch_latest_phones` retrieves real-time phone data from an external API (mock or real).
+4. **Response Formatting:** The latest phone models are extracted and returned in a structured JSON response.
+5. **Error Handling:** If the API request fails, a relevant error message is returned.
+
+### How to Run:
+1. Install dependencies:
+   ```bash
+   pip install flask requests python-dotenv
+   ```
+2. Set up the API key:
+   - Create a `.env` file and add:
+     ```
+     GEMINI_API_KEY=your_google_gemini_api_key_here
+     ```
+3. Start the Flask server:
+   ```bash
+   python flask_ai_phone_api.py
+   ```
+4. Test the API:
+   - Open: `http://127.0.0.1:5000/latest-phones?query=What’s the latest phone model?`
+
+"""
